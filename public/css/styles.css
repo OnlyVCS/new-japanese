@@ -12,11 +12,15 @@ h1 {
     padding-top: 20px;
 }
 
+h2 {
+    margin: 10px 0 10px 0;
+}
+
 .container {
     width: 32%;
     max-width: 700px;
     min-width: 300px;
-    height: 600px;
+    height: 500px;
     /* max-height: 600px; */
     max-height: calc(100vh - 40px);
     margin: 0 auto;
@@ -26,10 +30,13 @@ h1 {
 }
 
 img {
+    min-width: 150px;
     width: 250px;
     max-width: 300px;
     border-radius: 20px;
     margin: 20px 0;
+
+    background-color: #fff;
 }
 
 a {
@@ -56,3 +63,7 @@ button:hover {
 }
 
 /* FOOTER */
+
+footer {
+    text-align: center;
+}

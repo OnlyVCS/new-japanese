@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hiragana</title>
+        <link rel="stylesheet" href="../public/css/styles.css">
+        <link rel="stylesheet" href="../public/css/game.css">
+    </head>
+    <body>
+        <div class="container">
+            <main>
+                <h1>Hiragana</h1>
+                <p id="message" style="position:absolute; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 30px;"></p>
+                <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Hiragana_letter_A.svg/1200px-Hiragana_letter_A.svg.png"
+                alt="Image of a Kanji"
+                > -->
+                <p class="kanji">あ</p>
+                <form id="form">
+                    <h2><label name="answerLabel" id="answerLabel" for="answer">What it sounds like?</label></h2>
+                    <input name="answer" id="answer" type="text" placeholder="In Rōmaji..." required>
+                    <button type="submit" name="submit">Send</button>
+                </form>
+            </main>
+        </div>
+        <footer>
+            <p>© Vinicius Costa 2023</p>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const form = document.getElementById('form');
+                const message = document.getElementById('message');
+
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+
+                    const formData = new FormData(form);
+
+                    await fetch('/submit', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                message.innerHTML = 'Deu bom';
+                            } else {
+                                message.innerHTML = 'Deu ruim';
+                            }
+                            setTimeout(() => {
+                                    location.reload();
+                            }, 1000);
+                        })
+                        .catch(err => {
+                            console.error('Something went wrong: ' + err);
+                            message.innerHTML = "Error while trying to verify..."
+                        })
+                })
+            })
+        </script>
+    </body>
+</html>
