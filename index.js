@@ -78,7 +78,7 @@ app.get('/katakana', (req, res) => {
 app.post('/submit', upload.none(), (req, res) => {
     let answer = req.body.answer;
     if(answer) {
-        if(answer == charArray[round].romaji) {
+        if(answer.toLowerCase() == charArray[round].romaji) {
             res.json({ success: true })
             score++;
         } else {
