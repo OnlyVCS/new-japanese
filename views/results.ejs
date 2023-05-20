@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Results</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../public/css/styles.css">
+        <link rel="stylesheet" href="../public/css/results.css">
+    </head>
+    <body>
+        <div class="container">
+            <main>
+                <h1>Results</h1>
+                <h2>Score</h2>
+                <p class="value"><%= score %> / 10</p>
+                <button class="restart" onclick="reload()">Restart</button>
+                <a class="home" href="/"><button>Go to home</button></a>
+            </main>
+        </div>
+        <footer>
+            <p>© Vinicius Costa 2023</p>
+        </footer>
+
+        <script>
+            function reload() {
+                location.reload();
+            }
+        </script>
+    </body>
+</html>

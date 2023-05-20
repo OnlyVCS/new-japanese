@@ -1,0 +1,46 @@
+{
+    "hiragana": [
+        {
+            "japanese": "あ",
+            "romaji": "a"
+        },
+        {
+            "japanese": "え",
+            "romaji": "e"
+        },
+        {
+            "japanese": "い",
+            "romaji": "i"
+        },
+        {
+            "japanese": "お",
+            "romaji": "o"
+        },
+        {
+            "japanese": "う",
+            "romaji": "u"
+        }
+    ],
+    "katakana": [
+        {
+            "japanese": "ア",
+            "romaji": "a"
+        },
+        {
+            "japanese": "エ",
+            "romaji": "e"
+        },
+        {
+            "japanese": "イ",
+            "romaji": "i"
+        },
+        {
+            "japanese": "オ",
+            "romaji": "o"
+        },
+        {
+            "japanese": "ウ",
+            "romaji": "u"
+        }
+    ]
+}
